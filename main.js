@@ -12,6 +12,7 @@ let editNameParent = document.querySelector(".change-name");
 let editNameValue = document.querySelector(".change-name input");
 let editeNameBtn = document.querySelector(".change-name button");
 let overlay = document.querySelector(".overlay");
+let exitChangeName = document.querySelector(".change-name span");
 
 let priceOne = window.localStorage.getItem("price-one");
 let priceTwo = window.localStorage.getItem("price-two");
@@ -21,7 +22,7 @@ let clientTwoNameFromLocal = window.localStorage.getItem("client-two-name");
 
 addBtn.onclick = function () {
   if (price.value != "") {
-    if (selectClient.getAttribute("id") == 1) {
+    if (selectClient.value == "client 1") {
       if (clientOne.textContent == 0) {
         clientOne.textContent = price.value;
       } else {
@@ -33,7 +34,7 @@ addBtn.onclick = function () {
       invalidMsg.classList.remove("show");
       price.value = "";
       calcTotal();
-    } else if (selectClient.getAttribute("id") == 2) {
+    } else if (selectClient.value == "client 2") {
       if (clientTwo.textContent == 0) {
         clientTwo.textContent = price.value;
       } else {
@@ -86,6 +87,11 @@ showEditNameBtn.forEach((el) => {
     };
   });
 });
+
+exitChangeName.onclick = function () {
+  editNameParent.classList.remove("show");
+  overlay.classList.remove("show");
+};
 
 if (clientOneName && clientTwoName) {
   clientOneName.textContent = clientOneNameFromLocal;
