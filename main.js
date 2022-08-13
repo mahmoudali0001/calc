@@ -1,6 +1,8 @@
 let price = document.querySelector(".price-input");
 let addBtn = document.querySelector("button");
-let selectClient = document.querySelector("#select-client");
+let selectClient = document.querySelector(".select-client");
+let option1 = document.querySelectorAll(".select-client option")[1];
+let option2 = document.querySelectorAll(".select-client  option")[2];
 let clientOne = document.querySelector(".client-one .client-income span");
 let clientTwo = document.querySelector(".client-Two .client-income span");
 let invalidMsg = document.querySelector(".invalid-msg");
@@ -22,7 +24,7 @@ let clientTwoNameFromLocal = window.localStorage.getItem("client-two-name");
 
 addBtn.onclick = function () {
   if (price.value != "") {
-    if (selectClient.value == "client 1") {
+    if (selectClient.options[selectClient.selectedIndex].id == "1") {
       if (clientOne.textContent == 0) {
         clientOne.textContent = price.value;
       } else {
@@ -34,7 +36,7 @@ addBtn.onclick = function () {
       invalidMsg.classList.remove("show");
       price.value = "";
       calcTotal();
-    } else if (selectClient.value == "client 2") {
+    } else if (selectClient.options[selectClient.selectedIndex].id == "2") {
       if (clientTwo.textContent == 0) {
         clientTwo.textContent = price.value;
       } else {
@@ -62,7 +64,7 @@ function calcTotal() {
   window.localStorage.setItem("total-price", totalPrice.textContent);
 }
 
-if (priceTwo && priceOne && totalPriceFromLocal) {
+if (priceTwo != null && priceOne != null && totalPriceFromLocal != null) {
   clientOne.textContent = priceOne;
   clientTwo.textContent = priceTwo;
   totalPrice.textContent = totalPriceFromLocal;
@@ -93,7 +95,9 @@ exitChangeName.onclick = function () {
   overlay.classList.remove("show");
 };
 
-if (clientOneName && clientTwoName) {
+if (clientOneNameFromLocal != null && clientTwoNameFromLocal != null) {
   clientOneName.textContent = clientOneNameFromLocal;
   clientTwoName.textContent = clientTwoNameFromLocal;
+  option1.textContent = clientOneNameFromLocal;
+  option2.textContent = clientTwoNameFromLocal;
 }

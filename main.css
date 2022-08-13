@@ -96,12 +96,7 @@ button {
   font-size: 18px;
   float: right;
   margin: 3px;
-  display: none;
   transition: 0.3s linear;
-}
-
-.client-name:hover i {
-  display: block;
 }
 
 .change-name {
