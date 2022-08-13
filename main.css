@@ -68,8 +68,8 @@ button {
 .client-name {
   position: relative;
   color: white;
-  font-size: 17px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 400;
   padding: 5px 10px;
   text-transform: capitalize;
   box-shadow: 0px 8px 19px -10px #000;
@@ -97,6 +97,10 @@ button {
   float: right;
   margin: 3px;
   transition: 0.3s linear;
+}
+
+.client-name i img {
+  width: 15px;
 }
 
 .change-name {
@@ -146,12 +150,10 @@ button {
 .change-name span {
   position: absolute;
   top: -7px;
-  right: 6px;
-  font-size: 20px;
-  color: white;
-  background: red;
-  line-height: 1;
-  padding: 11px;
-  border-radius: 20%;
+  right: -5px;
   cursor: pointer;
+}
+
+.change-name span img {
+  width: 24px;
 }
