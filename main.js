@@ -78,10 +78,11 @@ showEditNameBtn.forEach((el) => {
       if (editNameValue.value != "") {
         if (e.target.parentElement.getAttribute("id") == 1) {
           window.localStorage.setItem("client-one-name", editNameValue.value);
+          clientOneName.textContent = editNameValue.value;
         } else {
           window.localStorage.setItem("client-two-name", editNameValue.value);
+          clientTwoName.textContent = editNameValue.value;
         }
-        e.target.parentElement.textContent = editNameValue.value;
         editNameParent.classList.toggle("show");
         overlay.classList.toggle("show");
         editNameValue.value = "";
