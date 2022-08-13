@@ -74,6 +74,7 @@ showEditNameBtn.forEach((el) => {
   el.addEventListener("click", function (e) {
     editNameParent.classList.toggle("show");
     overlay.classList.toggle("show");
+    console.log(e.target.parentElement.getAttribute("id"));
     editeNameBtn.onclick = function () {
       if (editNameValue.value != "") {
         if (e.target.parentElement.getAttribute("id") == 1) {
