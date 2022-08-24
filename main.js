@@ -1,5 +1,4 @@
 let priceInputForNewValue = document.querySelector(".price-input");
-let clearBtn = document.querySelector(".clear");
 let addNewPriceBtn = document.querySelector("#add-new-value");
 let selectClient = document.querySelector(".select-client");
 let invalidMsg = document.querySelector(".invalid-msg");
@@ -16,10 +15,6 @@ let addNewClient = document.querySelector(".add-new-client");
 
 let arrayOfClients = [];
 let arrayOfPaymentData = [];
-
-clearBtn.onclick = function () {
-  localStorage.clear();
-};
 
 if (localStorage.getItem("total-price") != null) {
   totalPrice.innerHTML = localStorage.getItem("total-price");

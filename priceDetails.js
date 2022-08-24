@@ -2,6 +2,7 @@ let detailsParent = document.querySelector(".details-parent");
 let totalPrice = document.querySelector(".total-price span");
 let spendInput = document.querySelector(".spend");
 let spendBtn = document.querySelector(".neg-spend");
+let priceAfterSpend = document.querySelector(".price-after-spend");
 
 let paymentData = JSON.parse(localStorage.getItem("payment-details"));
 
@@ -33,15 +34,22 @@ paymentData.forEach((e, i) => {
   detailsParent.appendChild(paymentParent);
 });
 
+if (localStorage.getItem("total-price") != null) {
+  totalPrice.innerHTML = localStorage.getItem("total-price");
+}
+
+if (localStorage.getItem("price-after-spend") !== null) {
+  priceAfterSpend.innerHTML = localStorage.getItem("price-after-spend");
+} else {
+  priceAfterSpend.innerHTML = totalPrice.innerHTML;
+}
+
 spendBtn.onclick = function () {
   if (spendInput.value != "") {
-    if (totalPrice.innerHTML == "0") {
-      totalPrice.innerHTML =
-        Number(totalPrice.innerHTML) - Number(spendInput.value);
+    priceAfterSpend.innerHTML =
+      Number(priceAfterSpend.innerHTML) - Number(spendInput.value);
 
-      localStorage.setItem("total-price", totalPrice.innerHTML);
-    } else {
-    }
+    localStorage.setItem("price-after-spend", priceAfterSpend.innerHTML);
 
     spendInput.value = "";
   }

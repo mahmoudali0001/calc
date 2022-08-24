@@ -36,7 +36,8 @@ h3::after {
   right: 0;
 }
 
-.total-price {
+.total-price,
+.price-after-spend {
   margin: 15% auto 0;
   width: fit-content;
   font-size: 40px;
@@ -72,6 +73,10 @@ h3::after {
   display: flex;
   justify-content: center;
   color: white;
+}
+
+.price-after-spend {
+  margin-top: 0;
 }
 
 .details-parent {
