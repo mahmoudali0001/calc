@@ -1,12 +1,116 @@
 body {
-  background-color: #eee;
   font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 120px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(202, 202, 202);
+  transition: 0.3s linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  width: 15px;
+}
+
+/* start container */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Container in  Small Screen  */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Container in  Medium Screen  */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Container in  Large Screen  */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End container */
+
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 4px);
+  height: 50px;
+  z-index: 4;
+  border: 2px solid #607d8b;
+  background-color: white;
+}
+
+.clients {
+  height: 307px;
+  overflow: auto;
+  margin-top: 15px;
+}
+.add-new-client {
+  padding: 15px;
+  width: fit-content;
+  position: fixed;
+  bottom: 4px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #607d8b;
+  z-index: 5;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+}
+
+.add-new-client img {
+  width: 30px;
 }
 
 h3 {
   font-size: 35px;
   text-align: center;
-  color: #ffc107;
+  color: #00bcd4;
+  position: relative;
+}
+
+h3::before {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 2px;
+  width: 10%;
+  top: 50%;
+  left: 0;
+}
+
+h3::after {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 2px;
+  width: 10%;
+  top: 50%;
+  right: 0;
+}
+
+h3 span {
+  color: #9e9e9e;
 }
 
 .price-input,
@@ -19,7 +123,7 @@ button {
 .price-input {
   display: block;
   width: 100%;
-  border: none;
+  border: 1px solid #eee;
   margin-bottom: 15px;
 }
 
@@ -30,7 +134,7 @@ input:focus-visible {
 select {
   display: block;
   width: 100%;
-  border: none;
+  border: 1px solid #eee;
   margin-bottom: 15px;
   background-color: white;
 }
@@ -58,11 +162,16 @@ button {
 }
 
 .client-one {
-  margin-top: 15%;
+  border: 3px solid #9e9e9e;
+  border-radius: 9px;
+  margin-top: 15px;
 }
 
 .client-one .client-name {
-  background-color: tomato;
+  background-color: #9e9e9e;
+  border-radius: 0px;
+  margin-top: -1px;
+  font-size: 20px;
 }
 
 .client-name {
@@ -78,18 +187,28 @@ button {
 
 .client-income {
   background-color: white;
+  font-size: 18px;
   padding: 15px;
   margin-top: -15px;
   z-index: 1;
 }
 
 .client-two .client-name {
-  background-color: teal;
+  background-color: #9e9e9e;
+  border-radius: 10px;
 }
 
 .total-price {
-  margin-top: 25px;
-  font-size: 20px;
+  font-size: 15px;
+  margin-top: 9px;
+  margin-left: 15px;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+.total-price span {
+  color: #2bca31;
 }
 
 .client-name i {
@@ -126,7 +245,7 @@ button {
   background-color: #0000004a;
   top: -1000px;
   left: 0;
-  z-index: 4;
+  z-index: 5;
   transition: 0.3s linear;
 }
 

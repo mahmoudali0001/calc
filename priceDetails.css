@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+}
+
+h3 {
+  margin-top: 15px;
+  font-size: 35px;
+  text-align: center;
+  color: #00bcd4;
+  position: relative;
+}
+
+h3 span {
+  color: #9e9e9e;
+}
+
+h3::before {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 2px;
+  width: 10%;
+  top: 50%;
+  left: 0;
+}
+
+h3::after {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 2px;
+  width: 10%;
+  top: 50%;
+  right: 0;
+}
+
+.total-price {
+  margin: 15% auto 0;
+  width: fit-content;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.spend-parent {
+  position: relative;
+}
+
+.spend {
+  display: block;
+  margin: auto;
+  width: calc(100% - 52px);
+  padding: 15px;
+  border-radius: 11px;
+  font-size: 20px;
+  border: 1px solid #9e9e9e;
+}
+
+.spend:focus-visible {
+  outline-color: #f44336;
+}
+
+.neg-spend {
+  position: absolute;
+  top: 0px;
+  right: 25px;
+  font-size: 30px;
+  background: #f44336;
+  width: 51px;
+  border-radius: 15px 10px 10px 15px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.details-parent {
+  margin-top: 20%;
+}
+
+.details-parent div:first-of-type {
+  font-size: 25px;
+  padding: 0 15px;
+}
+
+.details-parent .details {
+  border-bottom: 1px solid #9e9e9e;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}

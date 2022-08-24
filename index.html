@@ -14,43 +14,33 @@
     <title>Calculate Your Income</title>
   </head>
   <body>
-    <h3>Calculate</h3>
-    <input
-      class="price-input"
-      type="text"
-      placeholder="Please Enter Your Income"
-    />
-    <select class="select-client">
-      <option>Select</option>
-      <option id="1">client 1</option>
-      <option id="2">client 2</option>
-    </select>
-    <div class="invalid-msg"></div>
-    <button>ADD</button>
-
-    <div class="client-one">
-      <h2 class="client-name" id="1">
-        <span class="name">client 1</span>
-        <i id="1"><img src="./edit.png" alt="" /></i>
-      </h2>
-      <div class="client-income">Total Price : <span>0</span> TRY</div>
+    <h3>Income <span>Calculate</span></h3>
+    <div class="add-new-client">
+      <img src="./icons8-plus-math-24.png" alt="" />
     </div>
-
-    <div class="client-two">
-      <h2 class="client-name" id="2">
-        <span class="name">client 2</span>
-        <i id="2"><img src="./edit.png" alt="" /></i>
-      </h2>
-      <div class="client-income">Total Price : <span>0</span> TRY</div>
+    <div class="nav-bar">
+      <a href="priceDetails.html" class="total-price">Total: $<span>0</span></a>
     </div>
+    <div class="container">
+      <input
+        class="price-input"
+        type="text"
+        placeholder="Please Enter Your Income"
+      />
+      <select class="select-client">
+        <option>Select</option>
+      </select>
+      <div class="invalid-msg"></div>
+      <button id="add-new-value">ADD</button>
 
-    <div class="total-price">Total Income Is : <span>0</span> TRY</div>
-
-    <div class="overlay"></div>
-    <div class="change-name">
-      <span class="exit"> <img src="./button.png" alt="" /> </span>
-      <input type="text" placeholder="Enter Client Name" />
-      <button>Change</button>
+      <div class="clients">
+        <div class="overlay"></div>
+        <div class="change-name">
+          <span class="exit"> <img src="./button.png" alt="" /> </span>
+          <input type="text" placeholder="Enter Client Name" />
+          <button>Change</button>
+        </div>
+      </div>
     </div>
     <script src="./main.js"></script>
   </body>
