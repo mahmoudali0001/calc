@@ -18,9 +18,7 @@ let arrayOfClients = [];
 let arrayOfPaymentData = [];
 
 clearBtn.onclick = function () {
-  localStorage.removeItem("total-price");
-  localStorage.removeItem("payment-details");
-  localStorage.removeItem("clients");
+  localStorage.clear();
 };
 
 if (localStorage.getItem("total-price") != null) {
