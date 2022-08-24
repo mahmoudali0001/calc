@@ -1,4 +1,5 @@
 let priceInputForNewValue = document.querySelector(".price-input");
+let clearBtn = document.querySelector(".clear");
 let addNewPriceBtn = document.querySelector("#add-new-value");
 let selectClient = document.querySelector(".select-client");
 let invalidMsg = document.querySelector(".invalid-msg");
@@ -15,6 +16,12 @@ let addNewClient = document.querySelector(".add-new-client");
 
 let arrayOfClients = [];
 let arrayOfPaymentData = [];
+
+clearBtn.onclick = function () {
+  localStorage.removeItem("total-price");
+  localStorage.removeItem("payment-details");
+  localStorage.removeItem("clients");
+};
 
 if (localStorage.getItem("total-price") != null) {
   totalPrice.innerHTML = localStorage.getItem("total-price");
@@ -183,5 +190,10 @@ function clientsDataFromLocalStorage() {
 if (localStorage.getItem("total-price") != null) {
   totalPrice.innerHTML = localStorage.getItem("total-price");
 }
+
+exitChangeName.onclick = function () {
+  editNameParent.classList.remove("show");
+  overlay.classList.remove("show");
+};
 
 clientsDataFromLocalStorage();
