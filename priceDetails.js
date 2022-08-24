@@ -4,7 +4,11 @@ let spendInput = document.querySelector(".spend");
 let spendBtn = document.querySelector(".neg-spend");
 let priceAfterSpend = document.querySelector(".price-after-spend");
 
-let paymentData = JSON.parse(localStorage.getItem("payment-details"));
+let paymentData = [];
+
+if (localStorage.getItem("payment-details") !== null) {
+  paymentData = JSON.parse(localStorage.getItem("payment-details"));
+}
 
 if (localStorage.getItem("total-price") != null) {
   totalPrice.innerHTML = localStorage.getItem("total-price");
