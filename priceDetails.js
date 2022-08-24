@@ -35,10 +35,13 @@ paymentData.forEach((e, i) => {
 
 spendBtn.onclick = function () {
   if (spendInput.value != "") {
-    totalPrice.innerHTML =
-      Number(totalPrice.innerHTML) - Number(spendInput.value);
+    if (totalPrice.innerHTML == "0") {
+      totalPrice.innerHTML =
+        Number(totalPrice.innerHTML) - Number(spendInput.value);
 
-    localStorage.setItem("total-price", totalPrice.innerHTML);
+      localStorage.setItem("total-price", totalPrice.innerHTML);
+    } else {
+    }
 
     spendInput.value = "";
   }
